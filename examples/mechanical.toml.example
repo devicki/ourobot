@@ -1,0 +1,12 @@
+# Copy to <project>/.ouroboros/mechanical.toml so `ouroboros_evaluate` runs real checks
+# (Stage 1) instead of reporting "NO CHECKS EXECUTED".
+# Top-level keys only. Plain commands: no shells, pipes, &&, redirects or $(...);
+# the first word must be an allowlisted tool (python, pytest, npm, ruff, ...).
+# Empty string or a missing key = skip that check. Or generate with: ouroboros detect
+test = "python3 -m unittest discover"
+lint = ""
+build = ""
+static = ""
+coverage = ""
+timeout = 300            # seconds per check
+coverage_threshold = 0.7
